@@ -228,9 +228,9 @@ public class MLP {
             long fimCarregamento = System.currentTimeMillis();
             System.out.println("Dataset carregado em: " + (fimCarregamento - inicioCarregamento) + " ms");
 
-            int numAmostras = 15000;
-            double taxaAprendizado = 0.001;
-            double acuraciaAlvo = 90.0; 
+            int numAmostras = 10000;
+            double taxaAprendizado = 0.003;
+            double acuraciaAlvo = 88.0; 
 
             System.out.println("\nIniciando o treino.\nNumero de Amostras: " + numAmostras + "\nMeta: Parar ao atingir "
                     + acuraciaAlvo + "% de acertos.");
@@ -304,7 +304,7 @@ public class MLP {
                         acertosTeste++;
                     }
 
-                    if (i < 25) {
+                    if ((0 <= i && i < 5) || (1000 <= i && i < 1005) || (3000 <= i && i < 3005) ) {
                         char letraPrevista = (char) ('A' + previsao);
                         char letraReal = (char) ('A' + real);
                         String status = acertou ? "[ACERTO]" : "[ERRO]";
